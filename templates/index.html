@@ -5,10 +5,15 @@
 </%def>
 <%def name="title()">My Home</%def>
 <%def name="js_defer()">
-    ${ parent.js_defer() }
+  ${ parent.js_defer() }
+  <script src="static/js/SmartHome.js"></script>
 </%def>
 
-<div class="col-xd-12 text-center">
-    <h2>My Home</h2>
-    <br>
+<div class="row">
+  <div class="col-xd-12 text-center">
+      <h2>My Home</h2>
+      <br>
+      <h3>lamp:</h3>
+      <button class = "btn btn-success col-md-4 col-md-offset-4" id = "lamp">On</button>
+    </div>
 </div>

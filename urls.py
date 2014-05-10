@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
-from SmartHome import views
+from apps.SmartHome import views
 admin.autodiscover()
 
 urlpatterns = patterns('',
