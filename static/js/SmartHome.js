@@ -16,11 +16,11 @@ function sendCommand(device, motion, selector){
   }, function(response){
     if (response.success){
       if (motion == "On"){
-        selector.attr('class', 'btn btn-danger col-md-4 col-md-offset-4');
+        selector.attr('class', 'btn btn-default active col-sm-offset-3');
         selector.text("Off")
       }
       else{
-        selector.attr('class', 'btn btn-success col-md-4 col-md-offset-4');
+        selector.attr('class', 'btn btn-default col-sm-offset-3');
         selector.text("On")
       }
     } else {
