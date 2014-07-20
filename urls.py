@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
-from apps.SmartHome import views
+import apps.SmartHome.views as SHViews
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -10,7 +10,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     #url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.IndexView.as_view(), name = 'index'),
+    url(r'^$', SHViews.IndexView.as_view(), name = 'index'),
+    url(r'^operate/(?P<device>\w+)/(?P<motion>\w+)$', SHViews.DeviceView.as_view(), name = 'device'),
 )
 
 urlpatterns += patterns('django.contrib.staticfiles.views',
