@@ -2,11 +2,11 @@ $(document).ready(function(){
   $('#lamp').click(function(){
     if ($(this).text() == "On"){
       // close lamp
-      sendCommand('lamp', 'On', $(this));
+      sendCommand('lamp', 'Off', $(this));
     }
     else{
       // open lamp
-      sendCommand('lamp', 'Off', $(this));
+      sendCommand('lamp', 'On', $(this));
     }
   });
 });
@@ -17,11 +17,11 @@ function sendCommand(device, motion, selector){
     if (response.success){
       if (motion == "On"){
         selector.attr('class', 'btn btn-default active col-sm-offset-3');
-        selector.text("Off")
+        selector.text("On")
       }
       else{
         selector.attr('class', 'btn btn-default col-sm-offset-3');
-        selector.text("On")
+        selector.text("Off")
       }
     } else {
     }
