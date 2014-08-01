@@ -40,7 +40,7 @@ class EventView(APIView):
         device = kwargs['device']
         motion = kwargs['motion']
         # Do something with device and motion
-        writeCommand(0, motion)
+        writeCommand(1, motion)
         print device, motion
         context = {'success': True}
         return self.render_to_response(context)
