@@ -19,7 +19,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -74,9 +74,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'q2i8f!c^e6v_sdje^j=&z9o3ku_v97#a)9t$#o8&98s1%*h!ql'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -161,7 +158,6 @@ LOGIN_URL = '/login'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'noreply@micbase.com'
 EMAIL_HOST_PASSWORD = '1P@fe89UAx&NSXp'
 EMAIL_USE_TLS = True
 

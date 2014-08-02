@@ -4,9 +4,12 @@ from django import http
 from django.utils.decorators import method_decorator
 from django.views.generic import View, TemplateView
 from django.views.decorators.csrf import csrf_exempt
+from settings.dev_local import COMMAND_PATH
 
-from CommandControl import *
-
+def writeCommand(node, motion):
+    f = open(COMMAND_PATH, 'a')
+    msg = str(node) + ' ' + motion + '\n'
+    f.write(msg)
 
 class JSONResponseMixin(object):
     def render_to_response(self, context):

@@ -1,4 +1,4 @@
 *.pyc
 venv
 staticfiles
-CommandControl.*
+dev_local
