@@ -1,4 +1,4 @@
 *.pyc
 venv
 staticfiles
-dev_local
+dev_local.py
