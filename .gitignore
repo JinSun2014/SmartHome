@@ -2,3 +2,4 @@
 venv
 staticfiles
 dev_local.py
+SmartHome_nginx.conf
