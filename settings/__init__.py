@@ -54,6 +54,7 @@ MEDIA_URL = '/media/'
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOG_PATH = os.path.join(BASE_DIR, '../var/log/SmartHome.error')
+COMMAND_PATH = os.path.join(BASE_DIR, '../var/run/Command_Queue.txt')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"

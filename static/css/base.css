@@ -5,3 +5,7 @@ body {
 textarea {
     resize: vertical;
 }
+
+p#error_msg {
+  color: red;
+}

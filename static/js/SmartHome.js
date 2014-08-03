@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 function sendCommand(device, motion, selector){
   $.post('operate/' + device + '/' + motion, {
-    'status': 'OK',
+    'status': 'ERROR',
   }, function(response){
     if (response.success){
       $('#error_msg').text('');
