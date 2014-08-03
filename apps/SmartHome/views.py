@@ -1,4 +1,5 @@
 import json
+import logging
 
 from django import http
 from django.utils.decorators import method_decorator
@@ -6,10 +7,15 @@ from django.views.generic import View, TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from settings.dev_local import COMMAND_PATH
 
+
+logger = logging.getLogger('django.request')
+
+
 def writeCommand(node, motion):
     f = open(COMMAND_PATH, 'a')
     msg = str(node) + ' ' + motion + '\n'
     f.write(msg)
+
 
 class JSONResponseMixin(object):
     def render_to_response(self, context):
@@ -42,8 +48,16 @@ class EventView(APIView):
     def post(self, request, *args, **kwargs):
         device = kwargs['device']
         motion = kwargs['motion']
-        # Do something with device and motion
-        writeCommand(1, motion)
-        print device, motion
-        context = {'success': True}
-        return self.render_to_response(context)
+        status = request.POST.get('status')
+        print status
+
+        if status == 'ERROR':
+            logger.error(device + ' ' + motion)
+            error_msg = "Failed to turn " + motion + ' ' + device + '.'
+            context = {'success': False, 'error_msg': error_msg}
+            return self.render_to_response(context)
+        else:
+            writeCommand(1, motion)
+            print device, motion
+            context = {'success': True}
+            return self.render_to_response(context)

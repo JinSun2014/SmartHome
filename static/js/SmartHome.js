@@ -13,8 +13,10 @@ $(document).ready(function(){
 
 function sendCommand(device, motion, selector){
   $.post('operate/' + device + '/' + motion, {
+    'status': 'OK',
   }, function(response){
     if (response.success){
+      $('#error_msg').text('');
       if (motion == "On"){
         selector.attr('class', 'btn btn-default active col-sm-offset-3');
         selector.text("On")
@@ -24,6 +26,7 @@ function sendCommand(device, motion, selector){
         selector.text("Off")
       }
     } else {
+        $('#error_msg').text(response.error_msg);
     }
   })
 }
