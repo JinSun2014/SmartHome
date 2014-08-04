@@ -53,9 +53,9 @@ class EventView(APIView):
 
         if status == 'ERROR':
             logger.error(device + ' ' + motion)
-            error_msg = "Failed to turn " + motion + ' ' + device + '.'
-            context = {'success': False, 'error_msg': error_msg}
-            return self.render_to_response(context)
+            # error_msg = "Failed to turn " + motion + ' ' + device + '.'
+            # context = {'success': False, 'error_msg': error_msg}
+            return
         else:
             writeCommand(1, motion)
             print device, motion
